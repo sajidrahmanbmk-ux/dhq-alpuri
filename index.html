@@ -24,25 +24,43 @@
             justify-content: space-between;
             align-items: center;
         }
-        .top-bar img {
-            height: 40px;
-            object-fit: contain;
-        }
         .header {
             background: linear-gradient(135deg, #0077b6, #00b4d8);
             color: white;
             padding: 20px 15px 30px 15px;
             text-align: center;
         }
+        .logos-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
         .dhq-logo {
+            height: 55px;
+            object-fit: contain;
+        }
+        .kp-logo {
+            height: 55px;
+            object-fit: contain;
+            background: white;
+            border-radius: 8px;
+            padding: 4px;
+        }
+        .hospital-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .ms-photo {
             width: 110px;
             height: 110px;
             border-radius: 50%;
             border: 4px solid white;
-            background: white;
-            padding: 5px;
-            object-fit: contain;
-            margin: 0 auto 15px auto;
+            object-fit: cover;
+            margin: 0 auto 10px auto;
             display: block;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
@@ -148,13 +166,18 @@
     <div class="container">
         <!-- 1. KP Govt Top Bar -->
         <div class="top-bar">
-            <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/department%20logo.png" alt="Government of KP Health Department">
+            <span style="color: white; font-size: 13px; font-weight: 600;">Government of Khyber Pakhtunkhwa</span>
             <span style="color: white; font-size: 13px; font-weight: 600;">محکمہ صحت خیبر پختونخوا</span>
         </div>
 
-        <!-- 2. Header Section with DHQ Logo -->
+        <!-- 2. Header: Both Logos + Text + MS Photo -->
         <div class="header">
-            <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/DHQ%20log.png" alt="DHQ Hospital Alpuri" class="dhq-logo">
+            <div class="logos-row">
+                <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/DHQ%20log.png" alt="DHQ Hospital Alpuri" class="dhq-logo">
+                <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/department%20logo.png" alt="KP Health Department" class="kp-logo">
+            </div>
+            <div class="hospital-name">DHQ HOSPITAL ALPURI</div>
+            <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/ms.jpg" alt="Dr Muhammad Ibrahim" class="ms-photo">
             <h2>MEDICAL SUPERINTENDENT</h2>
             <h3>DR MUHAMMAD IBRAHIM</h3>
             <p>DHQ Hospital Alpuri, District Shangla</p>
