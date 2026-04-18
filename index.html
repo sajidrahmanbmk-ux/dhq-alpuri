@@ -11,7 +11,26 @@
             padding: 0;
             background: #f0f2f5;
         }
-        .container {
+    .announcement-banner {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        color: white;
+        padding: 12px 15px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 14px;
+        box-shadow: 0 2px 8px rgba(238, 90, 36, 0.3);
+        animation: pulse 2s infinite;
+    }
+    .announcement-banner a {
+        color: #fff200;
+        text-decoration: underline;
+        font-weight: 700;
+    }
+    @keyframes pulse {
+        0% { opacity: 1; }
+        50% { opacity: 0.85; }
+        100% { opacity: 1; }
+    }        .container {
             max-width: 100%;
             margin: 0 auto;
             background: white;
@@ -234,7 +253,12 @@
             <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/DHQ%20log.png" alt="DHQ Hospital Alpuri">
             <div class="top-bar-text">Health Department<br>Khyber Pakhtunkhwa<br>District Shangla</div>
             <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/department%20logo.png" alt="KP Health Department">
+        </div>            <p>DHQ Hospital Alpuri, District Shangla</p>
         </div>
+        <div class="announcement-banner">
+            📢 Latest: Coming soon| <a href="https://example.com/letter.pdf" target="_blank">View Official Letter</a>
+        </div>
+        <div class="buttons">
 
         <!-- 2. Header Section -->
         <div class="header">
