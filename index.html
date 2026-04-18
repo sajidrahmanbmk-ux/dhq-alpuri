@@ -1,150 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DHQ Hospital Alpuri</title>
+    <title>DHQ Hospital Alpuri - Dr Muhammad Ibrahim</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
-            text-align: center;
+            padding: 0;
+            background: #f0f2f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        .top-bar {
+            background: #006a4e;
+            padding: 8px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar img {
+            height: 40px;
+            object-fit: contain;
         }
         .header {
-            background: #007bff;
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
             color: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 20px;
+            padding: 20px 15px 30px 15px;
+            text-align: center;
         }
-        .ms-photo {
-            width: 120px;
-            height: 120px;
+        .dhq-logo {
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             border: 4px solid white;
+            background: white;
+            padding: 5px;
+            object-fit: contain;
             margin: 0 auto 15px auto;
             display: block;
-            object-fit: cover;
-        }
-        .header h1 {
-            margin: 5px 0;
-            font-size: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         .header h2 {
-            margin: 5px 0;
-            font-size: 18px;
-            font-weight: normal;
+            margin: 5px 0 5px 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .header h3 {
+            margin: 0 0 5px 0;
+            font-size: 22px;
+            font-weight: 700;
         }
         .header p {
-            margin: 5px 0;
-            font-size: 16px;
+            margin: 0;
+            opacity: 0.95;
+            font-size: 14px;
+        }
+        .buttons {
+            padding: 20px 15px 10px 15px;
         }
         .btn {
+            padding: 14px;
             display: block;
-            background: #28a745;
-            color: white;
-            padding: 15px;
-            margin: 10px 0;
+            text-align: center;
             border-radius: 10px;
             text-decoration: none;
-            font-weight: bold;
+            margin: 12px 0;
+            font-weight: 600;
             font-size: 16px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+        }
+        .btn-call { background: #198754; color: white; }
+        .btn-complaint { background: #6c757d; color: white; }
+        .btn-fb { background: #1877F2; color: white; }
+        .btn-wa { background: #25D366; color: white; }
+        .btn-map { background: #4285F4; color: white; }
+        .info-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin: 20px 15px;
         }
         .card {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: left;
-        }
-        .card h3 {
-            color: #007bff;
+            flex: 1;
+            padding: 14px 8px;
             text-align: center;
-            margin-top: 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
-        .card p {
-            margin: 8px 0;
+        .card-yellow { background: #fff8e1; border: 1px solid #ffecb3; color: #f57c00; }
+        .card-green { background: #e8f5e9; border: 1px solid #c8e6c9; color: #2e7d32; }
+        .card-blue { background: #e3f2fd; border: 1px solid #bbdefb; color: #1565c0; }
+        .card-icon { font-size: 28px; }
+        .card-title { font-weight: 700; font-size: 16px; margin: 5px 0; }
+        .card-text { font-size: 12px; }
+        .opd {
+            background: #f8f9fa;
+            margin: 15px;
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+        .opd h3 {
+            margin: 0 0 12px 0;
+            text-align: center;
+            color: #212529;
+            font-size: 18px;
+        }
+        .opd table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .opd td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #dee2e6;
             font-size: 15px;
         }
-        .sunday {
-            color: red;
-            font-weight: bold;
+        .opd tr:last-child td {
+            border-bottom: none;
         }
-        summary {
-            display: block;
-            background: #ff9800;
-            color: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
+        footer {
+            background: #1a1a1a;
+            color: #aaa;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 30px;
+            font-size: 13px;
+        }
+        footer p {
+            margin: 6px 0;
+        }
+        details summary {
             cursor: pointer;
             list-style: none;
-            font-size: 16px;
         }
-        .option-btn {
-            display: block;
-            padding: 12px;
-            margin: 5px 0;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            color: white;
+        details summary::-webkit-details-marker {
+            display: none;
         }
-        .email-btn { background: #2196F3; }
-        .call-btn { background: #4CAF50; }
     </style>
 </head>
 <body>
-
-    <div class="header">
-        <img src="ms.jpg" alt="MS Dr Muhammad Ibrahim" class="ms-photo">
-        <h1>MEDICAL SUPERINTENDENT</h1>
-        <h2>DR MUHAMMAD IBRAHIM</h2>
-        <p>DHQ Hospital Alpuri</p>
-    </div>
-
-    <a href="tel:0996850041" class="btn">📞 Call: 0996-850041</a>
-
-    <details>
-        <summary>📝 Complaint & Suggestions</summary>
-        <div style="margin-top: 10px;">
-            <a href="mailto:dhqalpuri@gmail.com?subject=Complaint/Suggestion for DHQ Alpuri" class="option-btn email-btn">📧 Email کریں</a>
-            <a href="tel:0996850041" class="option-btn call-btn">📞 0996-850041 پر کال کریں</a>
+    <div class="container">
+        <!-- 1. KP Govt Top Bar -->
+        <div class="top-bar">
+            <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/department%20logo.png" alt="Government of KP Health Department">
+            <span style="color: white; font-size: 13px; font-weight: 600;">محکمہ صحت خیبر پختونخوا</span>
         </div>
-    </details>
-<a href="https://www.facebook.com/DHQhospitalalpurai?mibextid=ZbWKwL" 
-   target="_blank"
-   class="btn"
-   style="background: #1877F2; color: white; padding: 15px; display: block; text-align: center; border-radius: 8px; text-decoration: none; margin: 10px 0; font-weight: bold;">
-   📘 Facebook Official Page
-</a><a href="https://wa.me/923453291723?text=Hello%20DHQ%20Hospital%20Alpuri%0A%0AMy%20Feedback:%20" 
-   target="_blank"
-   class="btn"
-   style="background: #25D366; color: white; padding: 15px; display: block; text-align: center; border-radius: 8px; text-decoration: none; margin: 10px 0; font-weight: bold;">
-   📱 WhatsApp Feedback
-</a><a href="https://maps.app.goo.gl/HfWGJTksAsZunAPu9" 
-   target="_blank"
-   class="btn"
-   style="background: #4285F4; color: white; padding: 15px; display: block; text-align: center; border-radius: 8px; text-decoration: none; margin: 10px 0; font-weight: bold;">
-   📍 Google Map Location
-</a>
-    <div class="card">
-        <h3>OPD Timings</h3>
-        <p><b>Monday - Thursday:</b> 8:00 AM to 2:00 PM</p>
-        <p><b>Friday:</b> 8:00 AM to 12:00 PM</p>
-        <p><b>Saturday:</b> 8:00 AM to 2:00 PM</p>
-        <p class="sunday"><b>Sunday:</b> Emergency Only</p>
-        <hr>
-        <p><b>Emergency Service:</b> 24/7 Available</p>
-    </div>
-    <!-- Feedback Section -->
-    <section id="feedback" style="padding: 50px 20px; text-align: center; background: #f8f9fa; margin-top: 30px;">
-        
 
+        <!-- 2. Header Section with DHQ Logo -->
+        <div class="header">
+            <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/DHQ%20log.png" alt="DHQ Hospital Alpuri" class="dhq-logo">
+            <h2>MEDICAL SUPERINTENDENT</h2>
+            <h3>DR MUHAMMAD IBRAHIM</h3>
+            <p>DHQ Hospital Alpuri, District Shangla</p>
+        </div>
+
+        <!-- 3. Buttons Section -->
+        <div class="buttons">
+            <a href="tel:0996850041" class="btn btn-call">
+                📞 Call: 0996-850041
+            </a>
+
+            <details>
+                <summary class="btn btn-complaint">
+                    📝 Complaint & Suggestions
+                </summary>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 10px; border: 1px solid #dee2e6;">
+                    <a href="mailto:dhqalpuri@gmail.com?subject=Complaint/Suggestion for DHQ Hospital Alpuri" class="btn" style="background: #0d6efd; color: white; margin: 5px 0;">
+                        📧 Email کریں
+                    </a>
+                    <a href="tel:0996850041" class="btn" style="background: #198754; color: white; margin: 5px 0;">
+                        📞 پر کال کریں 0996-850041
+                    </a>
+                </div>
+            </details>
+
+            <a href="https://www.facebook.com/DHQhospitalalpurai?mibextid=ZbWKwL" target="_blank" class="btn btn-fb">
+                📘 Facebook Official Page
+            </a>
+
+            <a href="https://wa.me/923453291723?text=Hello%20DHQ%20Hospital%20Alpuri%0A%0AMy%20Feedback:%20" target="_blank" class="btn btn-wa">
+                📱 WhatsApp Feedback
+            </a>
+
+            <a href="https://maps.app.goo.gl/HfWGJTksAsZunAPu9" target="_blank" class="btn btn-map">
+                📍 Google Map Location
+            </a>
+        </div>
+
+        <!-- 4. Info Cards Section -->
+        <div class="info-cards">
+            <div class="card card-yellow">
+                <div class="card-icon">🚨</div>
+                <div class="card-title">24/7</div>
+                <div class="card-text">Emergency</div>
+            </div>
+            <div class="card card-green">
+                <div class="card-icon">🏥</div>
+                <div class="card-title">100+</div>
+                <div class="card-text">Beds</div>
+            </div>
+            <div class="card card-blue">
+                <div class="card-icon">👨‍⚕️</div>
+                <div class="card-title">50+</div>
+                <div class="card-text">Doctors</div>
+            </div>
+        </div>
+
+        <!-- 5. OPD Timings Section -->
+        <div class="opd">
+            <h3>🕐 OPD Timings</h3>
+            <table>
+                <tr>
+                    <td><strong>Monday - Thursday</strong></td>
+                    <td>08:00 AM - 02:00 PM</td>
+                </tr>
+                <tr>
+                    <td><strong>Friday</strong></td>
+                    <td>08:00 AM - 12:00 PM</td>
+                </tr>
+                <tr>
+                    <td><strong>Saturday</strong></td>
+                    <td>08:00 AM - 02:00 PM</td>
+                </tr>
+                <tr>
+                    <td><strong>Sunday</strong></td>
+                    <td>Emergency Only</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 6. Footer -->
+        <footer>
+            <p>📍 DHQ Hospital, Alpuri, District Shangla, Khyber Pakhtunkhwa</p>
+            <p>© 2026 All Rights Reserved - Government of Khyber Pakhtunkhwa</p>
+        </footer>
+    </div>
 </body>
 </html>
