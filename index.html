@@ -129,6 +129,12 @@
         .card-crimson { background: #ffebee; border: 1px solid #ef9a9a; color: #c62828; }
         .card-slate { background: #eceff1; border: 1px solid #cfd8dc; color: #455a64; }
         .card-sky { background: #e0f7fa; border: 1px solid #4dd0e1; color: #006064; }
+        .card-lightgreen { background: #f1f8e9; border: 1px solid #dcedc8; color: #33691e; }
+        .card-rose { background: #fce4ec; border: 1px solid #f8bbd0; color: #880e4f; }
+        .card-darkcrimson { background: #ffebee; border: 1px solid #ffcdd2; color: #b71c1c; }
+        .card-mint { background: #e0f2f1; border: 1px solid #b2dfdb; color: #00695c; }
+        .card-steel { background: #eceff1; border: 1px solid #cfd8dc; color: #263238; }
+        .card-gold { background: #fff8e1; border: 1px solid #ffecb3; color: #f57f17; }
         .card-icon { font-size: 28px; }
         .card-title { font-weight: 700; font-size: 15px; margin: 5px 0; }
         .card-text { font-size: 11px; }
@@ -188,6 +194,13 @@
         }
         details summary::-webkit-details-marker {
             display: none;
+        }
+        
+        /* موبائل پر زبردستی 2x2 رکھو */
+        @media (max-width: 767px) {
+            .info-cards {
+                grid-template-columns: 1fr 1fr !important;
+            }
         }
         
         /* Desktop / Laptop Adjustments */
@@ -261,7 +274,7 @@
             </a>
         </div>
 
-        <!-- 4. Info Cards Section - 26 Cards -->
+        <!-- 4. Info Cards Section - 32 Cards -->
         <div class="info-cards">
             <div class="card card-yellow">
                 <div class="card-icon">🚨</div>
@@ -393,21 +406,51 @@
                 <div class="card-title">Ambulance</div>
                 <div class="card-text">Emergency Service</div>
             </div>
+            <div class="card card-lightgreen">
+                <div class="card-icon">🏃</div>
+                <div class="card-title">Physiotherapy</div>
+                <div class="card-text">Rehab Unit</div>
+            </div>
+            <div class="card card-rose">
+                <div class="card-icon">👩‍⚕️</div>
+                <div class="card-title">Female Ward</div>
+                <div class="card-text">Ladies Ward 24/7</div>
+            </div>
+            <div class="card card-darkcrimson">
+                <div class="card-icon">❤️</div>
+                <div class="card-title">Blood Donation</div>
+                <div class="card-text">Donate Blood Save Life</div>
+            </div>
+            <div class="card card-mint">
+                <div class="card-icon">🧑‍🔬</div>
+                <div class="card-title">Pathology</div>
+                <div class="card-text">Advanced Tests</div>
+            </div>
+            <div class="card card-steel">
+                <div class="card-icon">♿</div>
+                <div class="card-title">Disabled Access</div>
+                <div class="card-text">Wheelchair Facility</div>
+            </div>
+            <div class="card card-gold">
+                <div class="card-icon">🗣️</div>
+                <div class="card-title">PRO Office</div>
+                <div class="card-text">Public Relations</div>
+            </div>
         </div>
 
         <!-- Notice Box -->
         <div class="notice-box">
-            💉 All Vaccines + EPI Vaccines |  OT, Lab, Digital X-Ray , Labor Room And All Wards 24/7 Available <br>
+            💉 All Vaccines + EPI All Vaccines|  OT, Lab, Digital X-Ray , Labor Room All Wards 24/7 Available <br>
     
         </div>
 
-        <!-- 5. OPD Timings Section -->
+        <!-- 5. OPD Timings Section - UPDATED -->
         <div class="opd">
             <h3>🕐 OPD Timings</h3>
             <table>
                 <tr>
                     <td><strong>Monday - Thursday</strong></td>
-                    <td>09:00 AM - 02:00 PM</td>
+                    <td>09:00 AM - 02:30 PM</td>
                 </tr>
                 <tr>
                     <td><strong>Friday</strong></td>
@@ -415,7 +458,7 @@
                 </tr>
                 <tr>
                     <td><strong>Saturday</strong></td>
-                    <td>09:00 AM - 02:00 PM</td>
+                    <td>09:00 AM - 02:30 PM</td>
                 </tr>
                 <tr>
                     <td><strong>Sunday</strong></td>
