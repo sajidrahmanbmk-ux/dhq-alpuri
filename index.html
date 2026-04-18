@@ -1,30 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DHQ Hospital Alpuri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 5px 0;
+            font-size: 22px;
+        }
+        .header h2 {
+            margin: 5px 0;
+            font-size: 18px;
+            font-weight: normal;
+        }
+        .header p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .btn {
+            display: block;
+            background: #28a745;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        .card h3 {
+            color: #007bff;
+            text-align: center;
+            margin-top: 0;
+        }
+        .card p {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+        .sunday {
+            color: red;
+            font-weight: bold;
+        }
+        summary {
+            display: block;
+            background: #ff9800;
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+            font-size: 16px;
+        }
+        .option-btn {
+            display: block;
+            padding: 12px;
+            margin: 5px 0;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+        }
+        .email-btn { background: #2196F3; }
+        .call-btn { background: #4CAF50; }
+    </style>
 </head>
-<body style="font-family: Arial; background: #f0f8ff; padding: 20px; text-align: center;">
-    
-    <div style="background: #0066cc; color: white; padding: 20px; border-radius: 15px;"><details style="margin: 10px 0;">
-  <summary style="display: block; background: #ff9800; color: white; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; cursor: pointer; list-style: none;">📝 Complaint & Suggestions</summary>
-  
-  <div style="margin-top: 10px;">
-    <a href="mailto:dhqalpuri@gmail.com?subject=Complaint/Suggestion for DHQ Alpuri" style="display: block; background: #2196F3; color: white; padding: 12px; margin: 5px 0; border-radius: 8px; text-decoration: none; font-weight: bold;">📧 Email کریں</a>
-    
-    <a href="tel:099685041" style="display: block; background: #4CAF50; color: white; padding: 12px; margin: 5px 0; border-radius: 8px; text-decoration: none; font-weight: bold;">📞 0996-85041 پر کال کریں</a>
-  </div>
-</details>
+<body>
+
+    <div class="header">
+        <h1>MEDICAL SUPERINTENDENT</h1>
+        <h2>DR MUHAMMAD IBRAHIM</h2>
+        <p>DHQ Hospital Alpuri</p>
     </div>
 
-</body>    <div style="background: white; padding: 20px; border-radius: 15px; margin-top: 20px; text-align: left;">
-        <h2 style="color: #0066cc; text-align: center; margin-top: 0;">OPD Timings</h2>
-        <p style="font-size: 16px; margin: 8px 0;"><b>Monday - Thursday:</b> 8:00 AM to 2:00 PM</p>
-        <p style="font-size: 16px; margin: 8px 0;"><b>Friday:</b> 8:00 AM to 12:00 PM</p>
-        <p style="font-size: 16px; margin: 8px 0;"><b>Saturday:</b> 8:00 AM to 2:00 PM</p>
-        <p style="font-size: 16px; margin: 8px 0; color: red;"><b>Sunday:</b> Emergency Only</p>
-        <hr style="margin: 15px 0;">
-        <p style="font-size: 16px; margin: 8px 0;"><b>Emergency Service:</b> 24/7 Available</p>
+    <a href="tel:099685041" class="btn">📞 Call: 0996-85041</a>
+
+    <details>
+        <summary>📝 Complaint & Suggestions</summary>
+        <div style="margin-top: 10px;">
+            <a href="mailto:dhqalpuri@gmail.com?subject=Complaint/Suggestion for DHQ Alpuri" class="option-btn email-btn">📧 Email کریں</a>
+            <a href="tel:099685041" class="option-btn call-btn">📞 0996-85041 پر کال کریں</a>
+        </div>
+    </details>
+
+    <div class="card">
+        <h3>OPD Timings</h3>
+        <p><b>Monday - Thursday:</b> 8:00 AM to 2:00 PM</p>
+        <p><b>Friday:</b> 8:00 AM to 12:00 PM</p>
+        <p><b>Saturday:</b> 8:00 AM to 2:00 PM</p>
+        <p class="sunday"><b>Sunday:</b> Emergency Only</p>
+        <hr>
+        <p><b>Emergency Service:</b> 24/7 Available</p>
     </div>
+
+</body>
 </html>
