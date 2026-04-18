@@ -90,13 +90,12 @@
         .btn-wa { background: #25D366; color: white; }
         .btn-map { background: #4285F4; color: white; }
         .info-cards {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 10px;
             margin: 20px 15px;
         }
         .card {
-            flex: 1;
             padding: 14px 8px;
             text-align: center;
             border-radius: 12px;
@@ -105,6 +104,9 @@
         .card-yellow { background: #fff8e1; border: 1px solid #ffecb3; color: #f57c00; }
         .card-green { background: #e8f5e9; border: 1px solid #c8e6c9; color: #2e7d32; }
         .card-blue { background: #e3f2fd; border: 1px solid #bbdefb; color: #1565c0; }
+        .card-purple { background: #f3e5f5; border: 1px solid #e1bee7; color: #7b1fa2; }
+        .card-red { background: #ffebee; border: 1px solid #ffcdd2; color: #c62828; }
+        .card-teal { background: #e0f2f1; border: 1px solid #b2dfdb; color: #00796b; }
         .card-icon { font-size: 28px; }
         .card-title { font-weight: 700; font-size: 16px; margin: 5px 0; }
         .card-text { font-size: 12px; }
@@ -132,6 +134,18 @@
         }
         .opd tr:last-child td {
             border-bottom: none;
+        }
+        .notice-box {
+            background: #e8f5e9;
+            border: 1px solid #4caf50;
+            border-radius: 10px;
+            padding: 12px;
+            margin: 15px;
+            text-align: center;
+            color: #2e7d32;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.6;
         }
         footer {
             background: #1a1a1a;
@@ -162,7 +176,7 @@
             <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/department%20logo.png" alt="KP Health Department">
         </div>
 
-        <!-- 2. Header Section: Purana wala style -->
+        <!-- 2. Header Section -->
         <div class="header">
             <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/ms.jpg" alt="Dr Muhammad Ibrahim" class="ms-photo">
             <h2>MEDICAL SUPERINTENDENT</h2>
@@ -203,7 +217,7 @@
             </a>
         </div>
 
-        <!-- 4. Info Cards Section -->
+        <!-- 4. Info Cards Section - Ab 6 Cards -->
         <div class="info-cards">
             <div class="card card-yellow">
                 <div class="card-icon">🚨</div>
@@ -220,6 +234,27 @@
                 <div class="card-title">50+</div>
                 <div class="card-text">Doctors</div>
             </div>
+            <div class="card card-purple">
+                <div class="card-icon">💉</div>
+                <div class="card-title">EPI</div>
+                <div class="card-text">Daily Vaccination</div>
+            </div>
+            <div class="card card-red">
+                <div class="card-icon">🏨</div>
+                <div class="card-title">OT 24/7</div>
+                <div class="card-text">Operation Theater</div>
+            </div>
+            <div class="card card-teal">
+                <div class="card-icon">💳</div>
+                <div class="card-title">Sehat Card</div>
+                <div class="card-text">24/7 Active</div>
+            </div>
+        </div>
+
+        <!-- Notice Box -->
+        <div class="notice-box">
+            💉 EPI Vaccination Available Daily<br>
+            🏨 Operation Theater & Sehat Card Plus - 24/7 Available
         </div>
 
         <!-- 5. OPD Timings Section -->
