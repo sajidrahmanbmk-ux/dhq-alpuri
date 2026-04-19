@@ -73,7 +73,7 @@
             font-size: 14px;
         }
         .announcement-banner {
-            background: #dc3545;
+            background: #c62828;
             color: white;
             padding: 12px 15px;
             text-align: center;
@@ -136,15 +136,15 @@
             border-radius: 10px;
             text-decoration: none;
             margin: 12px 0;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 16px;
             box-shadow: 0 3px 8px rgba(0,0,0,0.12);
         }
-        .btn-call { background: #198754; color: white; }
-        .btn-complaint { background: #6c757d; color: white; }
-        .btn-fb { background: #0d65d9; color: white; }
-        .btn-wa { background: #128c4a; color: white; }
-        .btn-map { background: #4285F4; color: white; }
+        .btn-call { background: #0d5e36; color: white; }
+        .btn-complaint { background: #495057; color: white; }
+        .btn-fb { background: #0a58ca; color: white; }
+        .btn-wa { background: #0f5132; color: white; }
+        .btn-map { background: #0d47a1; color: white; }
         .info-cards {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -165,17 +165,17 @@
             border-radius: 12px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
-        .card-yellow { background: #fff8e1; border: 1px solid #ffecb3; color: #b26a00; }
+        .card-yellow { background: #fff8e1; border: 1px solid #ffecb3; color: #7c4d00; }
         .card-green { background: #e8f5e9; border: 1px solid #c8e6c9; color: #1b5e20; }
         .card-blue { background: #e3f2fd; border: 1px solid #bbdefb; color: #0d47a1; }
         .card-purple { background: #f3e5f5; border: 1px solid #e1bee7; color: #4a148c; }
         .card-red { background: #ffebee; border: 1px solid #ffcdd2; color: #b71c1c; }
         .card-teal { background: #e0f2f1; border: 1px solid #b2dfdb; color: #004d40; }
-        .card-orange { background: #fff3e0; border: 1px solid #ffe0b2; color: #e65100; }
+        .card-orange { background: #fff3e0; border: 1px solid #ffe0b2; color: #bf360c; }
         .card-pink { background: #fce4ec; border: 1px solid #f8bbd0; color: #880e4f; }
         .card-indigo { background: #e8eaf6; border: 1px solid #c5cae9; color: #1a237e; }
         .card-cyan { background: #e0f7fa; border: 1px solid #b2ebf2; color: #006064; }
-        .card-lime { background: #f9fbe7; border: 1px solid #e6ee9c; color: #5c6b00; }
+        .card-lime { background: #f9fbe7; border: 1px solid #e6ee9c; color: #4a5500; }
         .card-brown { background: #efebe9; border: 1px solid #d7ccc8; color: #3e2723; }
         .card-violet { background: #ede7f6; border: 1px solid #d1c4e9; color: #311b92; }
         .card-amber { background: #fff8e1; border: 1px solid #ffecb3; color: #e65100; }
@@ -245,7 +245,7 @@
         }
         footer {
             background: #1a1a1a;
-            color: #dddddd;
+            color: #ffffff;
             text-align: center;
             padding: 25px 15px;
             margin-top: 30px;
@@ -347,7 +347,7 @@
                 <a href="https://maps.app.goo.gl/HfWGJTksAsZunAPu9" target="_blank" class="btn btn-map" aria-label="Google Map Location">
                     📍 Google Map Location
                 </a>
-                <a href="https://www.facebook.com/share/1KnrB3pZF5/" class="btn" style="background-color: #d32f2f; color: white;" target="_blank" aria-label="Hospital News">
+                <a href="https://www.facebook.com/share/1KnrB3pZF5/" class="btn" style="background-color: #b71c1c; color: white;" target="_blank" aria-label="Hospital News">
                     📢 Hospital News & Notices
                 </a>
                 
@@ -580,7 +580,7 @@
         <footer>
             <p>📍 DHQ Hospital, Alpuri, District Shangla, Khyber Pakhtunkhwa</p>
             <p>© 2026 DHQ Hospital Alpuri, District Shangla</p>
-            <p style="margin-top: 12px; font-size: 12px; color: #dddddd; border-top: 1px solid #333; padding-top: 12px;">
+            <p style="margin-top: 12px; font-size: 12px; color: #ffffff; border-top: 1px solid #333; padding-top: 12px;">
                 Website Designed & Developed by Sajid Rehman | Storekeeper, DHQ Hospital Alpuri, District Shangla
             </p>
         </footer>
@@ -601,13 +601,4 @@
                 if (serviceText.includes(searchTerm) || titleText.includes(searchTerm) || descText.includes(searchTerm)) {
                     card.style.display = 'block';
                     visibleCount++;
-                } else {
-                    card.style.display = 'none';
                 }
-            });
-            
-            noResults.style.display = visibleCount === 0 && searchTerm !== '' ? 'block' : 'none';
-        });
-    </script>
-</body>
-</html>
