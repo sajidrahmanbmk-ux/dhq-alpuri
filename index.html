@@ -684,7 +684,7 @@
 
         <footer>
             <p>📍 DHQ Hospital, Alpuri, District Shangla, Khyber Pakhtunkhwa</p>
-            <p>© 2026 DHQ Hospital Alpuri, District Shangla | Government of Khyber Pakhtunkhwa</p>
+            <p> |</p>
             <p style="margin-top: 12px; font-size: 12px; color: #ffffff; border-top: 1px solid #333; padding-top: 12px;">
                 Website Designed & Developed by Sajid Rehman | Storekeeper, DHQ Hospital Alpuri, District Shangla
             </p>
@@ -692,4 +692,50 @@
     </div>
 
     <script>
-        // Dark Mode Toggle
+                // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Search Functionality
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('#servicesCards .card');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const service = card.getAttribute('data-service').toLowerCase();
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                const text = card.querySelector('.card-text').textContent.toLowerCase();
+                
+                if (service.includes(searchTerm) || title.includes(searchTerm) || text.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0 && searchTerm !== '') {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
