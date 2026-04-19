@@ -74,25 +74,10 @@
         .announcement-banner {
             background: #dc3545;
             color: white;
-            padding: 12px 0;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .marquee {
-            display: inline-block;
-            animation: scroll-left 25s linear infinite;
-            padding-left: 100%;
-        }
-        .marquee span {
-            display: inline-block;
+            padding: 12px 15px;
+            text-align: center;
             font-weight: 600;
             font-size: 14px;
-            padding-right: 50px;
-            white-space: nowrap;
-        }
-        @keyframes scroll-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
         }
         .search-box {
             padding: 15px;
@@ -122,13 +107,14 @@
             border-radius: 25px;
             outline: none;
             box-sizing: border-box;
+            color: #212529;
         }
         #searchInput:focus {
             border-color: #00b4d8;
             box-shadow: 0 0 0 3px rgba(0,180,216,0.1);
         }
         #searchInput::placeholder {
-            color: #999;
+            color: #555;
         }
         .no-results {
             text-align: center;
@@ -319,9 +305,7 @@
         </div>
         
         <div class="announcement-banner">
-            <div class="marquee">
-                <span>📢 Official Announcement: Sehat Card Plus |Sehat Card Pharmacy | Labor Room | OT | Epi Center | All Wards Open 24/7</span>
-            </div>
+            📢 Official Announcement: Sehat Card Plus | Sehat Card Pharmacy | Labor Room | OT | Epi Center | All Wards Open 24/7
         </div>
 
         <div class="search-box">
@@ -595,7 +579,7 @@
         <footer>
             <p>📍 DHQ Hospital, Alpuri, District Shangla, Khyber Pakhtunkhwa</p>
             <p>© 2026 DHQ Hospital Alpuri, District Shangla</p>
-            <p style="margin-top: 12px; font-size: 12px; color: #999; border-top: 1px solid #333; padding-top: 12px;">
+            <p style="margin-top: 12px; font-size: 12px; color: #dddddd; border-top: 1px solid #333; padding-top: 12px;">
                 Website Designed & Developed by Sajid Rehman | Storekeeper, DHQ Hospital Alpuri, District Shangla
             </p>
         </footer>
@@ -606,23 +590,4 @@
             const searchTerm = this.value.toLowerCase().trim();
             const cards = document.querySelectorAll('#servicesCards .card');
             const noResults = document.getElementById('noResults');
-            let visibleCount = 0;
-            
-            cards.forEach(card => {
-                const serviceText = card.getAttribute('data-service').toLowerCase();
-                const titleText = card.querySelector('.card-title').textContent.toLowerCase();
-                const descText = card.querySelector('.card-text').textContent.toLowerCase();
-                
-                if (serviceText.includes(searchTerm) || titleText.includes(searchTerm) || descText.includes(searchTerm)) {
-                    card.style.display = 'block';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            noResults.style.display = visibleCount === 0 && searchTerm !== '' ? 'block' : 'none';
-        });
-    </script>
-</body>
-</html>
+            let
