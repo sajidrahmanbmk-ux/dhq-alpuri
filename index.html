@@ -18,6 +18,7 @@
             --top-bar-bg: #006a4e;
             --shadow: 0 2px 8px rgba(0,0,0,0.1);
             --opd-bg: #f8f9fa;
+            --opd-text: #212529;
         }
 
         [data-theme="dark"] {
@@ -30,6 +31,7 @@
             --top-bar-bg: #064e3b;
             --shadow: 0 2px 8px rgba(0,0,0,0.3);
             --opd-bg: #1e293b;
+            --opd-text: #f3f4f6;
         }
 
         body {
@@ -72,20 +74,15 @@
         
         /* ===== Dark Mode Button ===== */
         #theme-toggle {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
             background: rgba(255,255,255,0.2);
             border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            width: 38px;
-            height: 38px;
+            border-radius: 8px;
+            width: 45px;
+            height: 45px;
             cursor: pointer;
-            font-size: 18px;
-            line-height: 38px;
+            font-size: 20px;
             padding: 0;
-            z-index: 10;
+            margin-left: 8px;
         }
         
         .header {
@@ -119,14 +116,32 @@
             color: #ffffff;
             font-size: 14px;
         }
+        
+        /* ===== News Ticker Banner ===== */
         .announcement-banner {
             background: #c62828;
             color: white;
-            padding: 12px 15px;
-            text-align: center;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+        }
+        .ticker {
+            display: inline-block;
+            white-space: nowrap;
+            padding: 12px 0;
+            padding-left: 100%;
+            animation: ticker 25s linear infinite;
             font-weight: 600;
             font-size: 14px;
         }
+        .ticker:hover {
+            animation-play-state: paused;
+        }
+        @keyframes ticker {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+        
         .search-box {
             padding: 15px;
             background: var(--card-bg);
@@ -267,7 +282,7 @@
         .opd h3 {
             margin: 0 0 12px 0;
             text-align: center;
-            color: var(--text-color);
+            color: var(--opd-text);
             font-size: 18px;
         }
         .opd table {
@@ -278,7 +293,7 @@
             padding: 10px 8px;
             border-bottom: 1px solid var(--border-color);
             font-size: 15px;
-            color: var(--text-color);
+            color: var(--opd-text);
         }
         .opd tr:last-child td {
             border-bottom: none;
@@ -361,7 +376,9 @@
         </div>
         
         <div class="announcement-banner">
-            📢 Official Announcement: Sehat Card Plus | Sehat Card Pharmacy | Labor Room | OT | Epi Center | All Wards Open 24/7
+            <div class="ticker">
+                📢 Official Announcement: Sehat Card Plus | Sehat Card Pharmacy | Labor Room | OT | Epi Center | All Wards Open 24/7 &nbsp;&nbsp;&nbsp; 📢 Emergency: 0996-850041 | OPD Timings: 8AM to 2PM Mon-Sat &nbsp;&nbsp;&nbsp;
+            </div>
         </div>
 
         <div class="search-box">
@@ -662,19 +679,4 @@
                 }
             });
             
-            noResults.style.display = visibleCount === 0 && searchTerm !== '' ? 'block' : 'none';
-        });
-
-        // Dark Mode Toggle
-        const toggleBtn = document.getElementById('theme-toggle');
-        const currentTheme = localStorage.getItem('theme');
-
-        if (currentTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            toggleBtn.innerHTML = '☀️';
-        }
-
-        toggleBtn.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            if (theme === 'dark') {
-               
+            noResults.style.display = visibleCount === 0 && searchTerm !==
