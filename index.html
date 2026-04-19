@@ -102,9 +102,21 @@
             z-index: 100;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
+        .search-wrapper {
+            position: relative;
+        }
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #0077b6;
+            pointer-events: none;
+        }
         #searchInput {
             width: 100%;
-            padding: 12px 15px;
+            padding: 12px 15px 12px 45px;
             font-size: 15px;
             border: 2px solid #0077b6;
             border-radius: 25px;
@@ -114,6 +126,9 @@
         #searchInput:focus {
             border-color: #00b4d8;
             box-shadow: 0 0 0 3px rgba(0,180,216,0.1);
+        }
+        #searchInput::placeholder {
+            color: #999;
         }
         .no-results {
             text-align: center;
@@ -310,7 +325,10 @@
         </div>
 
         <div class="search-box">
-            <input type="text" id="searchInput" aria-label="Search hospital services">
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search Services..." aria-label="Search hospital services">
+            </div>
         </div>
 
         <main>
