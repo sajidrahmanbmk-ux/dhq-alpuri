@@ -165,7 +165,7 @@
             border-radius: 12px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
-        .card-yellow { background: #fff8e1; border: 1px solid #ffecb3; color: #7c4d00; }
+        .card-yellow { background: #fff8e1; border: 1px solid #ffecb3; color: #6d4c00; }
         .card-green { background: #e8f5e9; border: 1px solid #c8e6c9; color: #1b5e20; }
         .card-blue { background: #e3f2fd; border: 1px solid #bbdefb; color: #0d47a1; }
         .card-purple { background: #f3e5f5; border: 1px solid #e1bee7; color: #4a148c; }
@@ -178,7 +178,7 @@
         .card-lime { background: #f9fbe7; border: 1px solid #e6ee9c; color: #4a5500; }
         .card-brown { background: #efebe9; border: 1px solid #d7ccc8; color: #3e2723; }
         .card-violet { background: #ede7f6; border: 1px solid #d1c4e9; color: #311b92; }
-        .card-amber { background: #fff8e1; border: 1px solid #ffecb3; color: #e65100; }
+        .card-amber { background: #fff8e1; border: 1px solid #ffecb3; color: #5d4037; }
         .card-deeporange { background: #fbe9e7; border: 1px solid #ffccbc; color: #bf360c; }
         .card-lightblue { background: #e1f5fe; border: 1px solid #b3e5fc; color: #01579b; }
         .card-deeppurple { background: #ede7f6; border: 1px solid #d1c4e9; color: #311b92; }
@@ -196,12 +196,12 @@
         .card-darkcrimson { background: #ffebee; border: 1px solid #ffcdd2; color: #b71c1c; }
         .card-mint { background: #e0f2f1; border: 1px solid #b2dfdb; color: #004d40; }
         .card-steel { background: #eceff1; border: 1px solid #cfd8dc; color: #263238; }
-        .card-gold { background: #fff8e1; border: 1px solid #ffecb3; color: #e65100; }
+        .card-gold { background: #fff8e1; border: 1px solid #ffecb3; color: #5d4037; }
         .card-maroon { background: #ffebee; border: 1px solid #ef9a9a; color: #880e4f; }
         .card-navy { background: #e3f2fd; border: 1px solid #90caf9; color: #0d47a1; }
         .card-icon { font-size: 28px; }
-        .card-title { font-weight: 700; font-size: 15px; margin: 5px 0; }
-        .card-text { font-size: 11px; }
+        .card-title { font-weight: 700; font-size: 15px; margin: 5px 0; color: inherit; }
+        .card-text { font-size: 11px; color: inherit; font-weight: 600; }
         .opd {
             background: #f8f9fa;
             margin: 15px auto;
@@ -601,4 +601,13 @@
                 if (serviceText.includes(searchTerm) || titleText.includes(searchTerm) || descText.includes(searchTerm)) {
                     card.style.display = 'block';
                     visibleCount++;
+                } else {
+                    card.style.display = 'none';
                 }
+            });
+            
+            noResults.style.display = visibleCount === 0 && searchTerm !== '' ? 'block' : 'none';
+        });
+    </script>
+</body>
+</html>
