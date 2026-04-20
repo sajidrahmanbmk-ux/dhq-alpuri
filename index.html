@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="ur">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="DHQ Hospital Alpuri, District Shangla - 24/7 Emergency, OPD, Lab, Digital X-Ray, Sehat Card, Blood Bank, ICU, CCU. Dr Muhammad Ibrahim MS. Call 0996-850041">
     <title>DHQ Hospital Alpuri - Dr Muhammad Ibrahim</title>
     <link rel="preload" as="image" href="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/ms.webp" fetchpriority="high">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #f0f2f5;
@@ -14,9 +13,9 @@
             --card-bg: #ffffff;
             --header-bg: linear-gradient(135deg, #2e7d32 0%, #00695c 100%);
             --border-color: #dee2e6;
-            --search-border: #00695c;
+           --search-border: #00695c;
             --top-bar-bg: #004d40;
-            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow: 0 2px 8px rgba(0,0,0.1);
             --opd-bg: #f8f9fa;
             --opd-text: #212529;
             --toggle-bg: #e9ecef;
@@ -29,23 +28,17 @@
             --card-bg: #1f2937;
             --header-bg: linear-gradient(135deg, #0f172a, #1e293b);
             --border-color: #374151;
-            --search-border: #00695c;
+            --search-border: #3b82f6;
             --top-bar-bg: #064e3b;
-            --shadow: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow: 0 2px 8px rgba(0,0,0.3);
             --opd-bg: #1e293b;
             --opd-text: #f3f4f6;
             --toggle-bg: #374151;
             --toggle-text: #f3f4f6;
         }
 
-        [lang="en"] {
-            direction: ltr;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         body {
-            font-family: 'Noto Nastaliq Urdu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 500;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background: var(--bg-color);
@@ -158,12 +151,8 @@
             top: 50%;
             transform: translateY(-50%);
             font-size: 18px;
-            color: #00695c;
+            color: #0077b6;
             pointer-events: none;
-        }
-        [lang="en"] .search-icon {
-            left: auto;
-            right: 15px;
         }
         #searchInput {
             width: 100%;
@@ -176,24 +165,15 @@
             color: var(--text-color);
             background: var(--card-bg);
         }
-        [lang="en"] #searchInput {
-            padding: 12px 45px 12px 15px;
-        }
         #searchInput:focus {
-            border-color: #00695c;
-            box-shadow: 0 0 0 3px rgba(0,105,92,0.1);
+            border-color: #00b4d8;
+            box-shadow: 0 0 0 3px rgba(0,180,216,0.1);
         }
         #searchInput::placeholder {
             color: #6b7280;
         }
 
-        .controls-wrapper {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .control-toggle {
+        .theme-toggle-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -203,12 +183,12 @@
             padding: 8px 15px;
             gap: 10px;
         }
-        .control-label {
+        .theme-label {
             font-size: 14px;
             font-weight: 600;
             color: var(--toggle-text);
         }
-        .toggle-btn {
+        #theme-toggle {
             background: var(--search-border);
             border: none;
             border-radius: 20px;
@@ -218,7 +198,7 @@
             position: relative;
             transition: background 0.3s;
         }
-        .toggle-btn::after {
+        #theme-toggle::after {
             content: '';
             position: absolute;
             width: 20px;
@@ -229,7 +209,7 @@
             left: 3px;
             transition: transform 0.3s;
         }
-        .toggle-btn.active::after {
+        [data-theme="dark"] #theme-toggle::after {
             transform: translateX(24px);
         }
         
@@ -268,17 +248,19 @@
             gap: 10px;
             margin: 20px 15px;
         }
+        .info-cards > div {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+        .info-cards > div:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
         .card {
             padding: 14px 8px;
             text-align: center;
             border-radius: 12px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            cursor: pointer;
-        }
-        .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         .card-yellow { background: #fff8e1; border: 1px solid #ffecb3; color: #6d4c00; }
         .card-green { background: #e8f5e9; border: 1px solid #c8e6c9; color: #1b5e20; }
@@ -387,7 +369,7 @@
                 box-shadow: 0 20px rgba(0,0,0,0.1);
             }
             .info-cards {
-                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-columns: 1fr;
                 gap: 15px;
                 padding: 0 10px;
             }
@@ -403,158 +385,390 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-5px); }
         }
-        .hidden { display: none !important; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="top-bar">
             <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/DHQ%20log.webp" alt="DHQ Hospital Alpuri Logo" width="45" height="45" loading="eager" fetchpriority="high">
-            <div class="top-bar-text" data-ur="محکمہ صحت<br>خیبر پختونخوا<br>ضلع شانگلہ" data-en="Health Department<br>Khyber Pakhtunkhwa<br>District Shangla">محکمہ صحت<br>خیبر پختونخوا<br>ضلع شانگلہ</div>
+            <div class="top-bar-text">Health Department<br>Khyber Pakhtunkhwa<br>District Shangla</div>
             <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/department%20logo.webp" alt="KP Health Department Logo" width="45" height="45" loading="eager">
         </div>
 
         <div class="header">
             <img src="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/ms.webp" alt="Dr Muhammad Ibrahim Medical Superintendent" class="ms-photo" width="110" height="110" loading="eager" fetchpriority="high">
-            <h2 data-ur="میڈیکل سپرنٹنڈنٹ" data-en="MEDICAL SUPERINTENDENT">میڈیکل سپرنٹنڈنٹ</h2>
-            <h3 data-ur="ڈاکٹر محمد ابراہیم" data-en="DR MUHAMMAD IBRAHIM">ڈاکٹر محمد ابراہیم</h3>
-            <p data-ur="ڈی ایچ کیو ہسپتال الپوری، ضلع شانگلہ" data-en="DHQ Hospital Alpuri, District Shangla">ڈی ایچ کیو ہسپتال الپوری، ضلع شانگلہ</p>
+            <h2>MEDICAL SUPERINTENDENT</h2>
+            <h3>DR MUHAMMAD IBRAHIM</h3>
+            <p>DHQ Hospital Alpuri, District Shangla</p>
         </div>
         
         <div class="announcement-banner">
-            <div class="ticker" data-ur="📢 آفیشل اعلان: صحت کارڈ پلس | صحت کارڈ فارمیسی | لیبر روم | او ٹی | ایپی سینٹر | تمام وارڈز 24/7 کھلے ہیں &nbsp;&nbsp; 📢 ایمرجنسی: 0996-850041 | او پی ڈی اوقات: صبح 8 سے دوپہر 2 بجے پیر تا ہفتہ &nbsp;&nbsp;" data-en="📢 Official Announcement: Sehat Card Plus | Sehat Card Pharmacy | Labor Room | OT | Epi Center | All Wards Open 24/7 &nbsp;&nbsp; 📢 Emergency: 0996-850041 | OPD Timings: 8AM to 2PM Mon-Sat &nbsp;&nbsp;">
-                📢 آفیشل اعلان: صحت کارڈ پلس | صحت کارڈ فارمیسی | لیبر روم | او ٹی | ایپی سینٹر | تمام وارڈز 24/7 کھلے ہیں &nbsp;&nbsp; 📢 ایمرجنسی: 0996-850041 | او پی ڈی اوقات: صبح 8 سے دوپہر 2 بجے پیر تا ہفتہ &nbsp;&nbsp;
+            <div class="ticker">
+                📢 Official Announcement: Sehat Card Plus | Sehat Card Pharmacy | Labor Room | OT | Epi Center | All Wards Open 24/7 &nbsp;&nbsp; 📢 Emergency: 0996-850041 | OPD Timings: 8AM to 2PM Mon-Sat &nbsp;&nbsp;
             </div>
         </div>
 
         <div class="search-box">
             <div class="search-wrapper">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" placeholder="سروسز تلاش کریں..." aria-label="Search hospital services" data-ur-placeholder="سروسز تلاش کریں..." data-en-placeholder="Search Services...">
+                <input type="text" id="searchInput" placeholder="Search Services..." aria-label="Search hospital services">
             </div>
             
-            <div class="controls-wrapper">
-                <div class="control-toggle">
-                    <span class="control-label" data-ur="لائٹ" data-en="Light">لائٹ</span>
-                    <button id="theme-toggle" class="toggle-btn" aria-label="Toggle Dark Mode"></button>
-                    <span class="control-label" data-ur="ڈارک" data-en="Dark">ڈارک</span>
-                </div>
-                
-                <div class="control-toggle">
-                    <span class="control-label">اردو</span>
-                    <button id="lang-toggle" class="toggle-btn" aria-label="Toggle Language"></button>
-                    <span class="control-label">English</span>
-                </div>
+            <div class="theme-toggle-wrapper">
+                <span class="theme-label">Light Mode</span>
+                <button id="theme-toggle" aria-label="Toggle Dark Mode"></button>
+                <span class="theme-label">Dark Mode</span>
             </div>
         </div>
 
         <main>
             <div class="buttons">
                 <a href="tel:0996850041" class="btn btn-call" aria-label="Call Hospital">
-                    <span data-ur="📞 کال کریں: 0996-850041" data-en="📞 Call: 0996-850041">📞 کال کریں: 0996-850041</span>
+                    📞 Call: 0996-850041
                 </a>
 
                 <details>
                     <summary class="btn btn-complaint">
-                        <span data-ur="📝 شکایت اور تجاویز" data-en="📝 Complaint & Suggestions">📝 شکایت اور تجاویز</span>
+                        📝 Complaint & Suggestions
                     </summary>
                     <div style="background: var(--card-bg); padding: 15px; border-radius: 8px; margin-top: 10px; border: 1px solid var(--border-color);">
                         <a href="mailto:dhqalpuri@gmail.com?subject=Complaint/Suggestion for DHQ Hospital Alpuri" class="btn" style="background: #0d6efd; color: white; margin: 5px 0;">
-                            <span data-ur="📧 ای میل کریں" data-en="📧 Send Email">📧 ای میل کریں</span>
+                            📧 Email کریں
                         </a>
                         <a href="tel:0996850041" class="btn" style="background: #198754; color: white; margin: 5px 0;">
-                            <span data-ur="📞 کال کریں 0996-850041" data-en="📞 Call 0996-850041">📞 کال کریں 0996-850041</span>
+                            📞 پر کال کریں 0996-850041
                         </a>
                     </div>
                 </details>
 
                 <a href="https://www.facebook.com/DHQhospitalalpurai?mibextid=ZbWKwL" target="_blank" class="btn btn-fb" aria-label="Facebook Page">
-                    <span data-ur="📘 فیس بک آفیشل پیج" data-en="📘 Facebook Official Page">📘 فیس بک آفیشل پیج</span>
+                    📘 Facebook Official Page
                 </a>
 
                 <a href="https://wa.me/923453291723?text=Hello%20DHQ%20Hospital%20Alpuri%0A%0AMy%20Complain:%20" target="_blank" class="btn btn-wa" aria-label="WhatsApp Complaint">
-                    <span data-ur="📱 واٹس ایپ پر براہ راست شکایت" data-en="📱 Direct Complaint via WhatsApp">📱 واٹس ایپ پر براہ راست شکایت</span>
+                    📱 Direct Complaint via WhatsApp
                 </a>
 
                 <a href="https://maps.app.goo.gl/HfWGJTksAsZunAPu9" target="_blank" class="btn btn-map" aria-label="Google Map Location">
-                    <span data-ur="📍 گوگل میپ لوکیشن" data-en="📍 Google Map Location">📍 گوگل میپ لوکیشن</span>
+                    📍 Google Map Location
                 </a>
                 <a href="https://www.facebook.com/share/1KnrB3pZF5/" class="btn" style="background-color: #b71c1c; color: white;" target="_blank" aria-label="Hospital News">
-                    <span data-ur="📢 ہسپتال کی خبریں اور نوٹسز" data-en="📢 Hospital News & Notices">📢 ہسپتال کی خبریں اور نوٹسز</span>
+                    📢 Hospital News & Notices
                 </a>
                 <details>
-                    <summary class="btn" style="background-color: #4a148c; color: white;">
-                        <span data-ur="👨‍⚕️ ڈاکٹرز ڈیوٹی اور او پی ڈی اوقات" data-en="👨‍⚕️ Doctors Duty & OPD Timing">👨‍⚕️ ڈاکٹرز ڈیوٹی اور او پی ڈی اوقات</span>
-                    </summary>
-                    <div style="background: var(--card-bg); padding: 15px; border-radius: 8px; margin-top: 10px; border: 1px solid var(--border-color); text-align: center;">
-                        <h3 style="color: var(--text-color); margin: 5px 0 15px 0;" data-ur="📅 او پی ڈی ڈاکٹر شیڈول" data-en="📅 OPD Doctor Schedule">📅 او پی ڈی ڈاکٹر شیڈول</h3>
-                        <div style="background: #fff3e0; border: 1px solid #ffe0b2; color: #bf360c; padding: 15px; border-radius: 8px; font-size: 14px;">
-                            <span data-ur="<strong>جلد اپڈیٹ:</strong> ڈاکٹر ڈیوٹی روسٹر ایم ایس آفس سے تصدیق ہو رہا ہے۔<br>جلد ہی یہاں مکمل شیڈول شامل کر دیا جائے گا۔" data-en="<strong>Update Soon:</strong> Doctor duty roster is being verified by MS Office.<br>Complete schedule will be added here shortly."><strong>جلد اپڈیٹ:</strong> ڈاکٹر ڈیوٹی روسٹر ایم ایس آفس سے تصدیق ہو رہا ہے۔<br>جلد ہی یہاں مکمل شیڈول شامل کر دیا جائے گا۔</span>
-                        </div>
-                        <div style="background: #e8f5e9; border: 1px solid #c8e6c9; color: #1b5e20; padding: 10px; border-radius: 8px; margin-top: 15px; font-size: 12px;">
-                            <span data-ur="<strong>او پی ڈی اوقات:</strong> صبح 9:00 سے دوپہر 2:00 | <strong>ایمرجنسی:</strong> 24/7 کھلی" data-en="<strong>OPD Timing:</strong> 9:00 AM to 2:00 PM | <strong>Emergency:</strong> 24/7 Open"><strong>او پی ڈی اوقات:</strong> صبح 9:00 سے دوپہر 2:00 | <strong>ایمرجنسی:</strong> 24/7 کھلی</span>
-                        </div>
-                    </div>
-                </details>
+    <summary class="btn" style="background-color: #4a148c; color: white;">
+        👨‍⚕️ Doctors Duty & OPD Timing
+    </summary>
+    <div style="background: var(--card-bg); padding: 15px; border-radius: 8px; margin-top: 10px; border: 1px solid var(--border-color); text-align: center;">
+        
+        <h3 style="color: var(--text-color); margin: 5px 0 15px 0;">📅 OPD Doctor Schedule</h3>
+        
+        <div style="background: #fff3e0; border: 1px solid #ffe0b2; color: #bf360c; padding: 15px; border-radius: 8px; font-size: 14px;">
+            <strong>Update Soon:</strong> Doctor duty roster MS Office se verify ho raha hai.<br>
+            Jald hi yahan mukammal schedule add kar diya jayega.
+        </div>
+
+        <div style="background: #e8f5e9; border: 1px solid #c8e6c9; color: #1b5e20; padding: 10px; border-radius: 8px; margin-top: 15px; font-size: 12px;">
+            <strong>OPD Timing:</strong> 9:00 AM to 2:00 PM | <strong>Emergency:</strong> 24/7 Open
+        </div>
+    </div>
+</details>
                 <details>
-                    <summary class="btn" style="background-color: #00695c; color: white;">
-                        <span data-ur="📋 ڈاکٹر پروفائلز اور قابلیت" data-en="📋 Doctor Profiles & Qualifications">📋 ڈاکٹر پروفائلز اور قابلیت</span>
-                    </summary>
-                    <div style="background: var(--card-bg); padding: 15px; border-radius: 8px; margin-top: 10px; border: 1px solid var(--border-color); text-align: center;">
-                        <h3 style="color: var(--text-color); margin: 5px 0 15px 0;" data-ur="👨‍⚕️ ہماری میڈیکل ٹیم" data-en="👨‍⚕️ Our Medical Team">👨‍⚕️ ہماری میڈیکل ٹیم</h3>
-                        <div style="background: #e1f5fe; border: 1px solid #b3e5fc; color: #01579b; padding: 20px; border-radius: 8px; font-size: 14px;">
-                            <span data-ur="<strong>جلد آ رہا ہے</strong><br><br>ڈاکٹر پروفائلز فی الحال ایم ایس آفس سے تصدیق ہو رہے ہیں۔<br>قابلیت اور تجربے کی مکمل تفصیلات جلد اپڈیٹ کی جائیں گی۔" data-en="<strong>Coming Soon</strong><br><br>Doctor profiles are currently being verified by MS Office.<br>Complete details of qualifications & experience will be updated shortly."><strong>جلد آ رہا ہے</strong><br><br>ڈاکٹر پروفائلز فی الحال ایم ایس آفس سے تصدیق ہو رہے ہیں۔<br>قابلیت اور تجربے کی مکمل تفصیلات جلد اپڈیٹ کی جائیں گی۔</span>
-                        </div>
-                        <div style="background: #f1f8e9; border: 1px solid #dcedc8; color: #33691e; padding: 10px; border-radius: 8px; margin-top: 15px; font-size: 12px;">
-                            <span data-ur="<strong>نوٹ:</strong> او پی ڈی شیڈول کے لیے، براہ کرم اوپر والا آپشن چیک کریں۔" data-en="<strong>Note:</strong> For OPD schedule, please check the above option."><strong>نوٹ:</strong> او پی ڈی شیڈول کے لیے، براہ کرم اوپر والا آپشن چیک کریں۔</span>
-                        </div>
-                    </div>
-                </details>
+    <summary class="btn" style="background-color: #00695c; color: white;">   📋 Doctor Profiles & Qualifications   </summary>    <div style="background: var(--card-bg); padding: 15px; border-radius: 8px; margin-top: 10px; border: 1px solid var(--border-color); text-align: center;">             <h3 style="color: var(--text-color); margin: 5px 0 15px 0;">👨‍⚕️ Our Medical Team</h3>
+<div style="background: #e1f5fe; border: 1px solid #b3e5fc; color: #01579b; padding: 20px; border-radius: 8px; font-size: 14px;">
+            <strong>Coming Soon</strong><br><br>
+            Doctor profiles are currently being verified by MS Office.<br>
+            Complete details of qualifications & experience will be updated shortly.
+        </div>
+
+        <div style="background: #f1f8e9; border: 1px solid #dcedc8; color: #33691e; padding: 10px; border-radius: 8px; margin-top: 15px; font-size: 12px;">
+            <strong>Note:</strong> For OPD schedule, please check the above option.
+        </div>
+    </div>
+</details>
+                <div style="background-color: #2e7d32; color: white; text-align: center; padding: 12px; margin: 25px 0 15px 0; border-radius:
+479     📋 Our Services
                 
                 <div style="background-color: #2e7d32; color: white; text-align: center; padding: 12px; margin: 25px 0 15px 0; border-radius: 8px; font-size: 22px; font-weight: 600;">
-                    <span data-ur="🏥 ہماری خدمات" data-en="🏥 Our Services">🏥 ہماری خدمات</span>
+                    🏥 Our Services
                 </div>
                 
                 <div style="text-align: center; margin: 12px 0 18px 0;">
                     <div style="display: inline-block; background-color: #e8f5e9; padding: 8px 20px; border-radius: 20px; border: 1px solid #2e7d32; animation: bounce 2s infinite;">
-                        <span style="color: #2e7d32; font-size: 13px; font-weight: 600; margin-right: 6px;" data-ur="نیچے سکرول کریں" data-en="Scroll Down">نیچے سکرول کریں</span>
+                        <span style="color: #2e7d32; font-size: 13px; font-weight: 600; margin-right: 6px;">Scroll Down</span>
                         <span style="font-size: 16px;">👇</span>
                     </div>
                 </div>
             </div>
 
             <div class="info-cards" id="servicesCards">
-                <div class="card card-yellow" data-service="emergency 24/7 ایمرجنسی">
+                <div class="card card-yellow" data-service="emergency 24/7">
                     <div class="card-icon">🚨</div>
                     <div class="card-title">24/7</div>
-                    <div class="card-text" data-ur="ایمرجنسی" data-en="Emergency">ایمرجنسی</div>
+                    <div class="card-text">Emergency</div>
                 </div>
-                <div class="card card-green" data-service="beds 100+ بیڈ">
+                <div class="card card-green" data-service="beds 100+">
                     <div class="card-icon">🏥</div>
                     <div class="card-title">100+</div>
-                    <div class="card-text" data-ur="بیڈز" data-en="Beds">بیڈز</div>
+                    <div class="card-text">Beds</div>
                 </div>
-                <div class="card card-blue" data-service="specialist doctors expert ماہر">
+                <div class="card card-blue" data-service="specialist doctors expert">
                     <div class="card-icon">👨‍⚕️</div>
-                    <div class="card-title" data-ur="ماہر" data-en="Specialist">ماہر</div>
-                    <div class="card-text" data-ur="ماہر ڈاکٹرز" data-en="Expert Doctors">ماہر ڈاکٹرز</div>
+                    <div class="card-title">Specialist</div>
+                    <div class="card-text">Expert Doctors</div>
                 </div>
-                <div class="card card-purple" data-service="epi vaccination daily ویکسین">
+                <div class="card card-purple" data-service="epi vaccination daily">
                     <div class="card-icon">💉</div>
                     <div class="card-title">EPI</div>
-                    <div class="card-text" data-ur="روزانہ ویکسینیشن" data-en="Daily Vaccination">روزانہ ویکسینیشن</div>
+                    <div class="card-text">Daily Vaccination</div>
                 </div>
-                <div class="card card-red" data-service="ot operation theater 24/7 آپریشن">
+                <div class="card card-red" data-service="ot operation theater 24/7">
                     <div class="card-icon">⚕️</div>
                     <div class="card-title">OT 24/7</div>
-                    <div class="card-text" data-ur="آپریشن تھیٹر" data-en="Operation Theater">آپریشن تھیٹر</div>
+                    <div class="card-text">Operation Theater</div>
                 </div>
-                <div class="card card-teal" data-service="sehat card 24/7 active صحت کارڈ">
+                <div class="card card-teal" data-service="sehat card 24/7 active">
                     <div class="card-icon">💳</div>
-                    <div class="card-title" data-ur="صحت کارڈ" data-en="Sehat Card">صحت کارڈ</div>
-                    <div class="card-text" data-ur="24/7 فعال" data-en="24/7 Active">24/7 فعال</div>
+                    <div class="card-title">Sehat Card</div>
+                    <div class="card-text">24/7 Active</div>
                 </div>
-                <div class="card card-orange" data-service="pharmacy sehat card 24/7 فارمیسی">
+                <div class="card card-orange" data-service="pharmacy sehat card 24/7">
                     <div class="card-icon">💊</div>
-                    <div class="card-title" data-ur="فارمیسی" data-en="Pharmacy">فارمیسی</div>
-                    <div class="card-text" data-ur="صح
+                    <div class="card-title">Pharmacy</div>
+                    <div class="card-text">Sehat Card 24/7</div>
+                </div>
+                <div class="card card-pink" data-service="surgical ward 24/7">
+                    <div class="card-icon">🧑‍⚕️</div>
+                    <div class="card-title">Surgical</div>
+                    <div class="card-text">Surgical Ward 24/7</div>
+                </div>
+                <div class="card card-indigo" data-service="medical ward 24/7">
+                    <div class="card-icon">🩺</div>
+                    <div class="card-title">Medical</div>
+                    <div class="card-text">Medical Ward 24/7</div>
+                </div>
+                <div class="card card-cyan" data-service="children ward 24/7">
+                    <div class="card-icon">👶</div>
+                    <div class="card-title">Children</div>
+                    <div class="card-text">Children Ward 24/7</div>
+                </div>
+                <div class="card card-lime" data-service="nutrition pediatric">
+                    <div class="card-icon">🍼</div>
+                    <div class="card-title">Nutrition</div>
+                    <div class="card-text">Pediatric Nutrition</div>
+                </div>
+                <div class="card card-brown" data-service="bisp nashonuma center">
+                    <div class="card-icon">🏛️</div>
+                    <div class="card-title">BISP</div>
+                    <div class="card-text">Nashonuma Center</div>
+                </div>
+                <div class="card card-violet" data-service="lab laboratory 24/7 tests">
+                    <div class="card-icon">🧪</div>
+                    <div class="card-title">Lab 24/7</div>
+                    <div class="card-text">Laboratory Tests</div>
+                </div>
+                <div class="card card-amber" data-service="labor room delivery 24/7">
+                    <div class="card-icon">🤰</div>
+                    <div class="card-title">Labor Room</div>
+                    <div class="card-text">Delivery 24/7</div>
+                </div>
+                <div class="card card-deeporange" data-service="tb center treatment">
+                    <div class="card-icon">🫁</div>
+                    <div class="card-title">TB Center</div>
+                    <div class="card-text">TB Treatment</div>
+                </div>
+                <div class="card card-lightblue" data-service="vaccines dog bite tetanus">
+                    <div class="card-icon">💉</div>
+                    <div class="card-title">All Vaccines</div>
+                    <div class="card-text">Dog Bite, Tetanus etc</div>
+                </div>
+                <div class="card card-deeppurple" data-service="digital x-ray 24/7">
+                    <div class="card-icon">🩻</div>
+                    <div class="card-title">Digital X-Ray</div>
+                    <div class="card-text">24/7 Available</div>
+                </div>
+                <div class="card card-bluegrey" data-service="opd monday saturday">
+                    <div class="card-icon">📅</div>
+                    <div class="card-title">OPD Mon-Sat</div>
+                    <div class="card-text">Monday to Saturday</div>
+                </div>
+                <div class="card card-grey" data-service="postmortem room">
+                    <div class="card-icon">⚰️</div>
+                    <div class="card-title">Postmortem</div>
+                    <div class="card-text">Postmortem Room</div>
+                </div>
+                <div class="card card-darkgreen" data-service="hospital pharmacy monday saturday">
+                    <div class="card-icon">🏪</div>
+                    <div class="card-title">Hospital Pharmacy</div>
+                    <div class="card-text">Monday to Saturday</div>
+                </div>
+                <div class="card card-darkblue" data-service="car parking facility">
+                    <div class="card-icon">🅿️</div>
+                    <div class="card-title">Car Parking</div>
+                    <div class="card-text">Parking Facility</div>
+                </div>
+                <div class="card card-darkred" data-service="digital system medicine stock">
+                    <div class="card-icon">💻</div>
+                    <div class="card-title">Digital System</div>
+                    <div class="card-text">Medicine & Stock</div>
+                </div>
+                <div class="card card-emerald" data-service="masjid prayer facility">
+                    <div class="card-icon">🕌</div>
+                    <div class="card-title">Masjid</div>
+                    <div class="card-text">Prayer Facility</div>
+                </div>
+                <div class="card card-crimson" data-service="blood bank 24/7">
+                    <div class="card-icon">🩸</div>
+                    <div class="card-title">Blood Bank</div>
+                    <div class="card-text">24/7 Available</div>
+                </div>
+                <div class="card card-slate" data-service="waiting area male female separate">
+                    <div class="card-icon">🪑</div>
+                    <div class="card-title">Waiting Area</div>
+                    <div class="card-text">Male & Female Separate</div>
+                </div>
+                <div class="card card-sky" data-service="ambulance emergency service">
+                    <div class="card-icon">🚑</div>
+                    <div class="card-title">Ambulance</div>
+                    <div class="card-text">Emergency Service</div>
+                </div>
+                <div class="card card-lightgreen" data-service="physiotherapy rehab unit">
+                    <div class="card-icon">🏃</div>
+                    <div class="card-title">Physiotherapy</div>
+                    <div class="card-text">Rehab Unit</div>
+                </div>
+                <div class="card card-rose" data-service="female ward ladies 24/7">
+                    <div class="card-icon">👩‍⚕️</div>
+                    <div class="card-title">Female Ward</div>
+                    <div class="card-text">Ladies Ward 24/7</div>
+                </div>
+                <div class="card card-darkcrimson" data-service="blood donation donate save life">
+                    <div class="card-icon">❤️</div>
+                    <div class="card-title">Blood Donation</div>
+                    <div class="card-text">Donate Blood Save Life</div>
+                </div>
+                <div class="card card-mint" data-service="pathology advanced tests">
+                    <div class="card-icon">🧑‍🔬</div>
+                    <div class="card-title">Pathology</div>
+                    <div class="card-text">Advanced Tests</div>
+                </div>
+                <div class="card card-steel" data-service="disabled access wheelchair facility">
+                    <div class="card-icon">♿</div>
+                    <div class="card-title">Disabled Access</div>
+                    <div class="card-text">Wheelchair Facility</div>
+                </div>
+                <div class="card card-gold" data-service="pro office public relations">
+                    <div class="card-icon">🗣️</div>
+                    <div class="card-title">PRO Office</div>
+                    <div class="card-text">Public Relations</div>
+                </div>
+                <div class="card card-cyan" data-service="dental unit teeth care surgery">
+                    <div class="card-icon">🦷</div>
+                    <div class="card-title">Dental Unit</div>
+                    <div class="card-text">Teeth Care & Surgery</div>
+                </div>
+                <div class="card card-indigo" data-service="eye unit ophthalmology">
+                    <div class="card-icon">👁️</div>
+                    <div class="card-title">Eye Unit</div>
+                    <div class="card-text">Ophthalmology</div>
+                </div>
+                <div class="card card-maroon" data-service="ccu cardiac care unit">
+                    <div class="card-icon">❤️‍🩹</div>
+                    <div class="card-title">CCU</div>
+                    <div class="card-text">Cardiac Care Unit</div>
+                </div>
+                <div class="card card-navy" data-service="icu intensive care unit">
+                    <div class="card-icon">🛌</div>
+                    <div class="card-title">ICU</div>
+                    <div class="card-text">Intensive Care Unit</div>
+                </div>
+            </div>
+            
+            <div class="no-results" id="noResults">
+                ❌ کوئی سروس نہیں ملی۔ دوبارہ سرچ کریں
+            </div>
+
+            <div class="notice-box">
+                💉 All Vaccines + EPI Vaccines Available | OT, Lab, Digital X-Ray Labor Room And All Wards Open 24/7<br>
+            </div>
+
+            <div class="opd">
+                <h3>🕐 OPD Timings</h3>
+                <table>
+                    <tr>
+                        <td><strong>Monday - Thursday</strong></td>
+                        <td>09:00 AM - 02:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Friday</strong></td>
+                        <td>09:00 AM - 12:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Saturday</strong></td>
+                        <td>09:00 AM - 02:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sunday</strong></td>
+                        <td>Emergency Only</td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+
+        <footer>
+            <p>📍 DHQ Hospital, Alpuri, District Shangla, Khyber Pakhtunkhwa</p>
+            <p> </p>
+            <p style="margin-top: 12px; font-size: 12px; color: #ffffff; border-top: 1px solid #333; padding-top: 12px;">
+                Website Designed & Developed by Sajid Rehman , Storekeeper, DHQ Hospital Alpuri, District Shangla
+            </p>
+        </footer>
+    </div>
+
+    <script>
+                // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Search Functionality
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('#servicesCards .card');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const service = card.getAttribute('data-service').toLowerCase();
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                const text = card.querySelector('.card-text').textContent.toLowerCase();
+                
+                if (service.includes(searchTerm) || title.includes(searchTerm) || text.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0 && searchTerm !== '') {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
