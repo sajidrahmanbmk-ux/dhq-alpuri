@@ -205,19 +205,25 @@
 </div>
 
                 </details>
-<div style="text-align: center; margin-bottom: 5px; animation: bounce 1s infinite;">
-    <span style="font-size: 30px;">👇</span>
+                <div style="background-color: #f0fdf4; border: 2px dashed #2e7d32; border-radius: 15px; padding: 20px; text-align: center; margin: 20px 10px; clear: both;">
+    <div class="bouncing-hand" style="font-size: 40px; margin-bottom: 10px;">
+        👇
+    </div>
+    <p style="color: #2e7d32; font-weight: bold; font-family: sans-serif; margin: 0;">ہمارے ہسپتال کی سہولیات نیچے دیکھیں</p>
 </div>
 
 <style>
-@keyframes bounce {
+.bouncing-hand {
+    display: inline-block;
+    animation: bounceHand 1s infinite;
+}
+
+@keyframes bounceHand {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
 }
 </style>
-                
-                <div style="background-color: #2e7d32; color: white; text-align: center; padding: 12px; margin: 25px 0 15px 0; border-radius: 8px; font-size: 22px; font-weight: 600;">🏥 Our Services</div>
-            </div>
+
 
             <div class="info-cards" id="servicesCards">
                 <div class="card card-yellow" data-service="emergency 24/7"><div class="card-icon">🚨</div><div class="card-title">24/7</div><div class="card-text">Emergency</div></div>
