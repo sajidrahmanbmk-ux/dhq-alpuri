@@ -91,7 +91,7 @@
         .opd td { padding: 10px 8px; border-bottom: 1px solid var(--border-color); color: var(--opd-text); }
         footer { background: #1a1a1a; color: white; text-align: center; padding: 25px 15px; font-size: 13px; }
         
-        /* FINAL FIX 1: Sirf bahar wale menu buttons 45px */
+        /* FIX 1: Sirf bahar wale menu buttons 45px */
         .buttons > a.btn,
         .buttons > details > summary.btn,
         .buttons > a[style*="display: block"] {
@@ -109,7 +109,7 @@
             width: 100%!important;
         }
 
-        /* FINAL FIX 2: Complaint aur Doctors Duty ke details ko normal rakho */
+        /* FIX 2: Complaint aur Doctors Duty ke details ko normal rakho */
         .buttons > details {
             height: auto!important;
             max-height: none!important;
@@ -132,7 +132,7 @@
             display: block!important;
         }
 
-        /* FINAL FIX 3: Service cards sab 110px same size */
+        /* FIX 3: Service cards sab 110px same size */
         .info-cards .card {
             min-height: 110px!important;
             display: flex!important;
@@ -201,7 +201,7 @@
           box-shadow: 0 3px 8px rgba(0,0,0,0.12); 
           font-family: sans-serif;" 
    target="_blank">
-   🟢 Direct Through WhatsApp Complaint
+   🟢 WhatsApp Complaint Through WhatsApp
 </a>
                 <a href="https://www.google.com/maps/search/?api=1&query=DISTRICT+HEAD+QUARTER+HOSPITAL+ALPURAY&query_place_id=ChIJ9ayTdw403DgRmK4l82BZzUo" 
    style="display: block; 
@@ -238,7 +238,9 @@
                 <details style="margin: 12px 0; font-family: sans-serif;">
     <summary style="display: block; 
                     width: 100%; 
-                    padding: 14px; 
+                    padding: 0 16px; 
+                    height: 45px;
+                    line-height: 45px;
                     background-color: #4a148c; 
                     color: white; 
                     text-align: center; 
@@ -246,7 +248,8 @@
                     border-radius: 10px; 
                     cursor: pointer; 
                     box-shadow: 0 3px 8px rgba(0,0,0,0.12); 
-                    list-style: none;">
+                    list-style: none;
+                    box-sizing: border-box;">
         👨‍⚕️ Doctors Duty & OPD Schedule
     </summary>
     
