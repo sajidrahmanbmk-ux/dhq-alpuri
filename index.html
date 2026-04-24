@@ -46,7 +46,7 @@
         .btn { padding: 14px; display: block; text-align: center; border-radius: 10px; text-decoration: none; margin: 12px 0; font-weight: 700; box-shadow: 0 3px 8px rgba(0,0,0,0.12); }
         
         .info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 15px; }
-        .card { padding: 14px 8px; text-align: center; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); min-height: 110px; display: flex; flex-direction: column; justify-content: center; transition: 0.3s; }
+        .card { padding: 14px 8px; text-align: center; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); min-height: 110px; display: flex; flex-direction: column; justify-content: center; }
         .card-icon { font-size: 28px; }
         .card-title { font-weight: 700; font-size: 15px; margin: 5px 0; }
         .card-text { font-size: 11px; font-weight: 600; }
@@ -67,20 +67,6 @@
         .opd table { width: 100%; border-collapse: collapse; }
         .opd td { padding: 10px 8px; border-bottom: 1px solid var(--border-color); color: var(--opd-text); }
         footer { background: #1a1a1a; color: white; text-align: center; padding: 25px 15px; font-size: 13px; }
-
-        .buttons > a.btn,
-        .buttons > details > summary.btn {
-            height: 45px;
-            padding: 0 16px;
-            font-size: 14px;
-            line-height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 12px 0;
-            width: 100%;
-            box-sizing: border-box;
-        }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
@@ -113,7 +99,7 @@
         <div class="search-box">
             <div class="search-wrapper">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" placeholder="Search Hospital Services (e.g. Lab, Dental, X-Ray)...">
+                <input type="text" id="searchInput" placeholder="Search Services...">
             </div>
         </div>
 
@@ -123,7 +109,11 @@
                 
                 <a href="https://wa.me/923453291723?text=Assalam-o-Alaikum, DHQ Alpuri ke bare mein shikayat/mashwara:" class="btn" style="background:#25D366; color:white;">🟢 Complaint Through WhatsApp</a>
                 
+                <a href="https://www.facebook.com/DHQhospitalalpurai" class="btn" style="background:#0a58ca; color:white;">📘 Official Facebook Page</a>
+                
                 <a href="https://www.facebook.com/share/1CiBZTeoxF/" class="btn" style="background:#0866FF; color:white;">📢 Official Circular & Notices</a>
+
+                <a href="https://maps.app.goo.gl/YourActualGoogleMapsLinkHere" class="btn" style="background:#4285F4; color:white;">📍 Google Map Location</a>
 
                 <details style="margin: 12px 0;">
                     <summary class="btn" style="background:#4a148c; color:white; list-style: none; cursor: pointer;">👨‍⚕️ Doctors Duty & OPD Schedule</summary>
@@ -198,11 +188,10 @@
             const term = e.target.value.toLowerCase().trim();
             cards.forEach(card => {
                 const serviceInfo = card.getAttribute('data-service').toLowerCase();
-                // Check if search term matches any part of data-service
                 if (serviceInfo.includes(term)) {
-                    card.style.display = "flex"; // Show card and keep flex properties
+                    card.style.display = "flex";
                 } else {
-                    card.style.display = "none"; // Hide card
+                    card.style.display = "none";
                 }
             });
         });
