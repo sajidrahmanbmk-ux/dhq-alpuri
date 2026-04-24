@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DHQ Hospital Alpuri, District Shangla - 24/7 Emergency, OPD, Lab, Digital X-Ray, Sehat Card, Blood Bank, ICU, CCU. Dr Muhammad Ibrahim MS. Call 0996-850041">
+    <meta name="description" content="DHQ Hospital Alpuri, District Shangla - 24/7 Emergency, OPD, Lab, Digital X-Ray, Sehat Card, Blood Bank. Dr Muhammad Ibrahim MS. Call 0996-850041">
     <title>DHQ Hospital Alpuri - Dr Muhammad Ibrahim</title>
     <link rel="preload" as="image" href="https://raw.githubusercontent.com/sajidrahmanbmk-ux/dhq-alpuri/main/ms.webp" fetchpriority="high">
     <style>
@@ -17,7 +17,6 @@
             --top-bar-bg: #004d40;
             --shadow: 0 2px 8px rgba(0,0,0,0.1);
             --opd-bg: #f8f9fa;
-            --opd-text: #212529;
         }
 
         body {
@@ -51,7 +50,7 @@
         .card-title { font-weight: 700; font-size: 15px; margin: 5px 0; }
         .card-text { font-size: 11px; font-weight: 600; }
 
-        /* Diverse Card Colors */
+        /* Card Colors */
         .card-yellow { background: #fff8e1; border: 1px solid #ffecb3; color: #6d4c00; }
         .card-green { background: #e8f5e9; border: 1px solid #c8e6c9; color: #1b5e20; }
         .card-blue { background: #e3f2fd; border: 1px solid #bbdefb; color: #0d47a1; }
@@ -63,9 +62,9 @@
         .card-indigo { background: #e8eaf6; border: 1px solid #c5cae9; color: #1a237e; }
         .card-cyan { background: #e0f7fa; border: 1px solid #b2ebf2; color: #006064; }
 
-        .opd { background: var(--opd-bg); margin: 15px auto; padding: 18px; border-radius: 12px; border: 1px solid var(--border-color); max-width: 600px; }
+        .opd { background: var(--opd-bg); margin: 15px auto; padding: 18px; border-radius: 12px; border: 1px solid #dee2e6; max-width: 600px; }
         .opd table { width: 100%; border-collapse: collapse; }
-        .opd td { padding: 10px 8px; border-bottom: 1px solid var(--border-color); color: var(--opd-text); }
+        .opd td { padding: 10px 8px; border-bottom: 1px solid #dee2e6; }
         footer { background: #1a1a1a; color: white; text-align: center; padding: 25px 15px; font-size: 13px; }
 
         @keyframes bounce {
@@ -73,7 +72,6 @@
             40% {transform: translateY(-8px);}
             60% {transform: translateY(-4px);}
         }
-
         @media (min-width: 768px) { .info-cards { grid-template-columns: 1fr 1fr 1fr 1fr; } }
     </style>
 </head>
@@ -108,20 +106,30 @@
                 <a href="tel:0996850041" class="btn" style="background:#0d5e36; color:white;">📞 Call Emergency: 0996-850041</a>
                 
                 <a href="https://wa.me/923453291723?text=Assalam-o-Alaikum, DHQ Alpuri ke bare mein shikayat/mashwara:" class="btn" style="background:#25D366; color:white;">🟢 Complaint Through WhatsApp</a>
-                
-                <a href="https://www.facebook.com/DHQhospitalalpurai" class="btn" style="background:#0a58ca; color:white;">📘 Official Facebook Page</a>
-                
-                <a href="https://www.facebook.com/share/1CiBZTeoxF/" class="btn" style="background:#0866FF; color:white;">📢 Official Circular & Notices</a>
 
-                <a href="https://maps.app.goo.gl/YourActualGoogleMapsLinkHere" class="btn" style="background:#4285F4; color:white;">📍 Google Map Location</a>
+                <details style="margin: 12px 0;">
+                    <summary class="btn" style="background:#f44336; color:white; list-style: none; cursor: pointer;">📩 Complaint & Suggestions</summary>
+                    <div style="background: white; border: 1px solid #dee2e6; border-radius: 8px; padding: 15px; margin-top: 8px; text-align: center;">
+                        <p style="font-weight: bold; color: #212529; margin-bottom: 10px;">Aap apni shikayat ya mashwara niche diye gaye tarikon se bhej sakte hain:</p>
+                        <div style="margin-bottom: 15px; padding: 10px; border-bottom: 1px dashed #ccc;">
+                            <span style="display: block; font-size: 14px; color: #666;">Official Email:</span>
+                            <a href="mailto:dhqhospitalalpurishangla@gmail.com" style="color: #0d6efd; font-weight: bold; text-decoration: none;">dhqhospitalalpurishangla@gmail.com</a>
+                        </div>
+                        <div style="padding: 10px;">
+                            <span style="display: block; font-size: 14px; color: #666;">Contact Number:</span>
+                            <a href="tel:03453291723" style="color: #0d6efd; font-weight: bold; text-decoration: none;">0345-3291723</a>
+                        </div>
+                    </div>
+                </details>
+
+                <a href="https://www.facebook.com/DHQhospitalalpurai" class="btn" style="background:#0a58ca; color:white;">📘 Official Facebook Page</a>
+                <a href="https://www.facebook.com/share/1CiBZTeoxF/" class="btn" style="background:#0866FF; color:white;">📢 Official Circular & Notices</a>
+                <a href="https://maps.google.com/?cid=5390062601963417240&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" class="btn" style="background:#4285F4; color:white;">📍 Google Map Location</a>
 
                 <details style="margin: 12px 0;">
                     <summary class="btn" style="background:#4a148c; color:white; list-style: none; cursor: pointer;">👨‍⚕️ Doctors Duty & OPD Schedule</summary>
                     <div style="background: white; border: 1px solid #dee2e6; border-radius: 8px; padding: 15px; margin-top: 8px; text-align: center;">
                         <h3 style="color: #4a148c; margin-bottom: 10px; font-size: 18px;">📅 Weekly Doctors Roster</h3>
-                        <div style="background: #e3f2fd; border: 1px solid #bbdefb; color: #0d47a1; padding: 10px; border-radius: 8px; margin-bottom: 10px;">
-                            <strong>Official Roster Under Process</strong>
-                        </div>
                         <table style="width: 100%; font-size: 14px; text-align: left;">
                             <tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px;">Mon - Thu:</td><td style="padding: 8px;">08:00 AM - 02:00 PM</td></tr>
                             <tr style="border-bottom: 1px solid #ddd;"><td style="padding: 8px;">Friday:</td><td style="padding: 8px;">08:00 AM - 12:00 PM</td></tr>
@@ -138,29 +146,35 @@
 
             <div class="info-cards" id="servicesCards">
                 <div class="card card-yellow" data-service="emergency 24/7 accident"><div class="card-icon">🚨</div><div class="card-title">24/7</div><div class="card-text">Emergency</div></div>
-                <div class="card card-green" data-service="beds 100+ hospital"><div class="card-icon">🏥</div><div class="card-title">100+</div><div class="card-text">Beds</div></div>
-                <div class="card card-blue" data-service="specialist doctors expert opd"><div class="card-icon">👨‍⚕️</div><div class="card-title">Specialist</div><div class="card-text">Expert Doctors</div></div>
-                <div class="card card-purple" data-service="epi vaccination children daily"><div class="card-icon">💉</div><div class="card-title">EPI</div><div class="card-text">Daily Vaccination</div></div>
-                <div class="card card-red" data-service="ot operation theater surgery 24/7"><div class="card-icon">⚕️</div><div class="card-title">OT 24/7</div><div class="card-text">Operation Theater</div></div>
-                <div class="card card-teal" data-service="sehat card 24/7 active insurance"><div class="card-icon">💳</div><div class="card-title">Sehat Card</div><div class="card-text">24/7 Active</div></div>
-                <div class="card card-orange" data-service="pharmacy sehat card medicine 24/7"><div class="card-icon">💊</div><div class="card-title">Pharmacy</div><div class="card-text">Sehat Card 24/7</div></div>
-                <div class="card card-pink" data-service="surgical ward surgery 24/7"><div class="card-icon">🧑‍⚕️</div><div class="card-title">Surgical</div><div class="card-text">Surgical Ward 24/7</div></div>
-                <div class="card card-indigo" data-service="medical ward medicine 24/7"><div class="card-icon">🩺</div><div class="card-title">Medical</div><div class="card-text">Medical Ward 24/7</div></div>
-                <div class="card card-cyan" data-service="children ward pediatric 24/7"><div class="card-icon">👶</div><div class="card-title">Children</div><div class="card-text">Children Ward 24/7</div></div>
-                <div class="card card-yellow" data-service="nutrition pediatric baby food"><div class="card-icon">🍼</div><div class="card-title">Nutrition</div><div class="card-text">Pediatric Nutrition</div></div>
-                <div class="card card-green" data-service="bisp nashonuma center government"><div class="card-icon">🏛️</div><div class="card-title">BISP</div><div class="card-text">Nashonuma Center</div></div>
-                <div class="card card-blue" data-service="lab laboratory 24/7 tests blood"><div class="card-icon">🧪</div><div class="card-title">Lab 24/7</div><div class="card-text">Laboratory Tests</div></div>
-                <div class="card card-purple" data-service="labor room delivery 24/7 mother"><div class="card-icon">🤰</div><div class="card-title">Labor Room</div><div class="card-text">Delivery 24/7</div></div>
-                <div class="card card-red" data-service="tb center treatment lungs"><div class="card-icon">🫁</div><div class="card-title">TB Center</div><div class="card-text">TB Treatment</div></div>
-                <div class="card card-teal" data-service="vaccines dog bite tetanus injury"><div class="card-icon">💉</div><div class="card-title">All Vaccines</div><div class="card-text">Dog Bite, Tetanus</div></div>
-                <div class="card card-orange" data-service="digital x-ray 24/7 radiology"><div class="card-icon">🩻</div><div class="card-title">Digital X-Ray</div><div class="card-text">24/7 Available</div></div>
-                <div class="card card-pink" data-service="blood bank 24/7 available donor"><div class="card-icon">🩸</div><div class="card-title">Blood Bank</div><div class="card-text">24/7 Available</div></div>
-                <div class="card card-indigo" data-service="ccu cardiac care unit heart"><div class="card-icon">❤️‍🩹</div><div class="card-title">CCU</div><div class="card-text">Cardiac Care</div></div>
-                <div class="card card-green" data-service="homeopathy natural treatment medicine"><div class="card-icon">🌿</div><div class="card-title">Homeopathy</div><div class="card-text">Natural Treatment</div></div>
-                <div class="card card-yellow" data-service="dental unit teeth care surgery dentist"><div class="card-icon">🦷</div><div class="card-title">Dental Unit</div><div class="card-text">Teeth Care</div></div>
-                <div class="card card-green" data-service="eye unit ophthalmology vision"><div class="card-icon">👁️</div><div class="card-title">Eye Unit</div><div class="card-text">Ophthalmology</div></div>
-                <div class="card card-blue" data-service="ambulance emergency service transport"><div class="card-icon">🚑</div><div class="card-title">Ambulance</div><div class="card-text">Emergency</div></div>
-                <div class="card card-red" data-service="postmortem room forensic"><div class="card-icon">⚰️</div><div class="card-title">Postmortem</div><div class="card-text">Postmortem Room</div></div>
+                <div class="card card-green" data-service="beds 100+ hospital admission"><div class="card-icon">🏥</div><div class="card-title">100+</div><div class="card-text">Beds</div></div>
+                <div class="card card-blue" data-service="specialist doctors expert opd consultant"><div class="card-icon">👨‍⚕️</div><div class="card-title">Specialist</div><div class="card-text">Expert Doctors</div></div>
+                <div class="card card-purple" data-service="epi vaccination children daily immunize"><div class="card-icon">💉</div><div class="card-title">EPI</div><div class="card-text">Daily Vaccination</div></div>
+                <div class="card card-red" data-service="ot operation theater surgery 24/7 surgeon"><div class="card-icon">⚕️</div><div class="card-title">OT 24/7</div><div class="card-text">Operation Theater</div></div>
+                <div class="card card-teal" data-service="sehat card 24/7 active insurance treatment"><div class="card-icon">💳</div><div class="card-title">Sehat Card</div><div class="card-text">24/7 Active</div></div>
+                <div class="card card-orange" data-service="pharmacy sehat card medicine 24/7 store"><div class="card-icon">💊</div><div class="card-title">Pharmacy</div><div class="card-text">Sehat Card 24/7</div></div>
+                <div class="card card-pink" data-service="surgical ward surgery 24/7 admission"><div class="card-icon">🧑‍⚕️</div><div class="card-title">Surgical</div><div class="card-text">Surgical Ward 24/7</div></div>
+                <div class="card card-indigo" data-service="medical ward medicine 24/7 admission"><div class="card-icon">🩺</div><div class="card-title">Medical</div><div class="card-text">Medical Ward 24/7</div></div>
+                <div class="card card-cyan" data-service="children ward pediatric 24/7 child"><div class="card-icon">👶</div><div class="card-title">Children</div><div class="card-text">Children Ward 24/7</div></div>
+                <div class="card card-yellow" data-service="nutrition pediatric baby food growth"><div class="card-icon">🍼</div><div class="card-title">Nutrition</div><div class="card-text">Pediatric Nutrition</div></div>
+                <div class="card card-green" data-service="bisp nashonuma center government health"><div class="card-icon">🏛️</div><div class="card-title">BISP</div><div class="card-text">Nashonuma Center</div></div>
+                <div class="card card-blue" data-service="lab laboratory 24/7 tests blood screening"><div class="card-icon">🧪</div><div class="card-title">Lab 24/7</div><div class="card-text">Laboratory Tests</div></div>
+                <div class="card card-purple" data-service="labor room delivery 24/7 mother birth maternity"><div class="card-icon">🤰</div><div class="card-title">Labor Room</div><div class="card-text">Delivery 24/7</div></div>
+                <div class="card card-red" data-service="tb center treatment lungs dot treatment"><div class="card-icon">🫁</div><div class="card-title">TB Center</div><div class="card-text">TB Treatment</div></div>
+                <div class="card card-teal" data-service="vaccines dog bite tetanus injury immunization"><div class="card-icon">💉</div><div class="card-title">All Vaccines</div><div class="card-text">Dog Bite, Tetanus</div></div>
+                <div class="card card-orange" data-service="digital x-ray 24/7 radiology imaging"><div class="card-icon">🩻</div><div class="card-title">Digital X-Ray</div><div class="card-text">24/7 Available</div></div>
+                <div class="card card-pink" data-service="blood bank 24/7 available donor storage"><div class="card-icon">🩸</div><div class="card-title">Blood Bank</div><div class="card-text">24/7 Available</div></div>
+                <div class="card card-indigo" data-service="ccu cardiac care unit heart monitor"><div class="card-icon">❤️‍🩹</div><div class="card-title">CCU</div><div class="card-text">Cardiac Care</div></div>
+                <div class="card card-green" data-service="homeopathy natural treatment medicine organic"><div class="card-icon">🌿</div><div class="card-title">Homeopathy</div><div class="card-text">Natural Treatment</div></div>
+                <div class="card card-yellow" data-service="dental unit teeth care surgery dentist clinic"><div class="card-icon">🦷</div><div class="card-title">Dental Unit</div><div class="card-text">Teeth Care</div></div>
+                <div class="card card-green" data-service="eye unit ophthalmology vision optics spectacles"><div class="card-icon">👁️</div><div class="card-title">Eye Unit</div><div class="card-text">Ophthalmology</div></div>
+                <div class="card card-blue" data-service="ambulance emergency service transport van 24/7"><div class="card-icon">🚑</div><div class="card-title">Ambulance</div><div class="card-text">Emergency</div></div>
+                <div class="card card-red" data-service="postmortem room forensic morgue mortuary"><div class="card-icon">⚰️</div><div class="card-title">Postmortem</div><div class="card-text">Postmortem Room</div></div>
+                <div class="card card-teal" data-service="physiotherapy exercise rehab muscle bone"><div class="card-icon">🏃</div><div class="card-title">Physio</div><div class="card-text">Physiotherapy</div></div>
+                <div class="card card-cyan" data-service="ultrasound sonography scanning 24/7"><div class="card-icon">📡</div><div class="card-title">Ultrasound</div><div class="card-text">Sonography</div></div>
+                <div class="card card-pink" data-service="orthopedic bone fracture joint specialist"><div class="card-icon">🦴</div><div class="card-title">Orthopedic</div><div class="card-text">Bone Specialist</div></div>
+                <div class="card card-orange" data-service="gynae gynecology female health maternity"><div class="card-icon">👩‍⚕️</div><div class="card-title">Gynae</div><div class="card-text">Female Health</div></div>
+                <div class="card card-yellow" data-service="ent ear nose throat specialist"><div class="card-icon">👂</div><div class="card-title">ENT Unit</div><div class="card-text">Ear, Nose, Throat</div></div>
+                <div class="card card-red" data-service="mortuary dead body storage freezer cold"><div class="card-icon">❄️</div><div class="card-title">Mortuary</div><div class="card-text">Cold Storage</div></div>
             </div>
 
             <div class="opd">
@@ -173,7 +187,6 @@
                 </table>
             </div>
         </main>
-
         <footer>
             <p>📍 DHQ Hospital, Alpuri, District Shangla, KP</p>
             <p style="margin-top:10px; opacity:0.7;">Website Developed by Sajid Rehman, Storekeeper, DHQ Alpuri</p>
@@ -183,16 +196,11 @@
     <script>
         const searchInput = document.getElementById('searchInput');
         const cards = document.querySelectorAll('.card');
-
         searchInput.addEventListener('input', (e) => {
             const term = e.target.value.toLowerCase().trim();
             cards.forEach(card => {
                 const serviceInfo = card.getAttribute('data-service').toLowerCase();
-                if (serviceInfo.includes(term)) {
-                    card.style.display = "flex";
-                } else {
-                    card.style.display = "none";
-                }
+                card.style.display = serviceInfo.includes(term) ? "flex" : "none";
             });
         });
     </script>
